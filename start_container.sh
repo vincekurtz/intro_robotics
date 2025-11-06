@@ -4,4 +4,4 @@
 docker build -t intro_robotics_image .
 
 # Launch a container from the image
-docker run -it intro_robotics_image
+docker run --rm --network=host -it intro_robotics_image

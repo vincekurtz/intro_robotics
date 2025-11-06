@@ -18,6 +18,8 @@ RUN . /opt/ros/jazzy/setup.sh && colcon build --symlink-install
 WORKDIR /home/ubuntu
 RUN echo 'source /home/ubuntu/turtlebot3_ws/install/setup.bash' >> /home/ubuntu/.bashrc
 RUN echo 'export ROS_DOMAIN_ID=30' >> /home/ubuntu/.bashrc
+RUN echo 'export TURTLEBOT3_MODEL=burger' >> /home/ubuntu/.bashrc
+RUN echo 'export RMW_IMPLEMENTATION=rmw_fastrtps_cpp' >> /home/ubuntu/.bashrc
 
 # Enable a colorful terminal
-ENV TERM=xterm-256color
+# ENV TERM=xterm-256color

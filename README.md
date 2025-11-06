@@ -4,6 +4,16 @@
 
 Turtlebot getting started: https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 
+Blog post: https://blog.robotair.io/the-complete-beginners-guide-to-using-docker-for-ros-2-deployment-2025-edition-0f259ca8b378
+
+General ROS2 troubleshooting: https://docs.ros.org/en/rolling/How-To-Guides/Installation-Troubleshooting.html
+
+Initial sanity checks:
+```
+ros2 run demo_nodes_cpp talker
+ros2 run demo_nodes_cpp listener
+```
+
 ## Docker basics:
 
 Build the image (first time only, same dir as Dockerfile).
