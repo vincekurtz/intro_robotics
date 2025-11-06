@@ -7,6 +7,10 @@ Turtlebot getting started: https://emanual.robotis.com/docs/en/platform/turtlebo
 Blog post: https://blog.robotair.io/the-complete-beginners-guide-to-using-docker-for-ros-2-deployment-2025-edition-0f259ca8b378
 
 General ROS2 troubleshooting: https://docs.ros.org/en/rolling/How-To-Guides/Installation-Troubleshooting.html
+including multicast tests.
+
+Fix for issue with multicast working, but topics not visiable across machines:
+https://stackoverflow.com/questions/75006253/ros2-on-multiple-machines-ros2-multicast-working-talker-listener-not-working
 
 Initial sanity checks:
 ```
