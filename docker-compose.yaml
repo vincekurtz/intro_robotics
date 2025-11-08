@@ -1,0 +1,11 @@
+services:
+  intro_robotics:
+    build: .
+    # Interactive terminal
+    stdin_open: true
+    tty: true
+    # Network for ROS 2
+    network_mode: host
+    # Allow GUI applications
+    environment:
+      - DISPLAY=${DISPLAY}

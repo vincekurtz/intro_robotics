@@ -20,42 +20,42 @@ ros2 run demo_nodes_cpp listener
 
 ## Docker basics:
 
-Build the image (first time only, same dir as Dockerfile).
+Start the container (`-d` runs in detached mode, `--build` builds the image
+first, if needed):
 ```
-docker build -t intro_robotics_image .
-```
-
-Launch a container from the image:
-```
-docker run -it intro_robotics_image
+docker compose up --build -d
 ```
 
-Note that we can launch several containers at once with this commands. These
-will be separate containers, but can communicate over ROS topics.
-
-### Alternative version, enter several terminals in the same container
-Start up the container, in detached mode (`-d`) and set up for interactive
-terminals (`-it`).
+Join the container, in a new terminal:
 ```
-docker run -d -it --name intro_robotics intro_robotics_image
+docker compose exec intro_robotics bash
 ```
 
-Check that the container is running:
+Stop the container
+```
+docker compose down
+```
+
+To check if there are running containers:
 ```
 docker ps
 ```
 
-Open new terminals to access the container:
+## Turtlebot3 Bringup
+
+SSH into the turtlebot3 (password is username):
 ```
-docker exec -it intro_robotics /bin/bash 
-```
-Note that if we do this, we need to source the ROS setup file again in each
-terminal:
-```
-source /ros_entrypoint.sh
+ssh ubuntu@[IP address]
 ```
 
-Close the container
+Start and enter the docker container on the host machine (see above).
+
+On the turtelebot, 
 ```
-docker stop intro_robotics
+ros2 launch turtlebot3_bringup robot.launch.py
+```
+
+On the host machine (in the docker container):
+```
+ros2 topic list
 ```
