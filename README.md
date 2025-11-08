@@ -12,6 +12,8 @@ including multicast tests.
 Fix for issue with multicast working, but topics not visiable across machines:
 https://stackoverflow.com/questions/75006253/ros2-on-multiple-machines-ros2-multicast-working-talker-listener-not-working
 
+https://roboticseabass.com/2023/07/09/updated-guide-docker-and-ros2/
+
 Initial sanity checks:
 ```
 ros2 run demo_nodes_cpp talker
@@ -58,4 +60,9 @@ ros2 launch turtlebot3_bringup robot.launch.py
 On the host machine (in the docker container):
 ```
 ros2 topic list
+```
+
+Remote control from the host machine (in the docker container):
+```
+ros2 run turtlebot3_teleop teleop_keyboard
 ```

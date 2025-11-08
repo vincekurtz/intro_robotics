@@ -1,11 +1,27 @@
 services:
   intro_robotics:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      # Use the same user and group IDs as the host user. This will ensure that
+      # permissions are consistent inside and outside the container.
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+        - USERNAME=${USERNAME:-user}
+    hostname: docker
+
     # Interactive terminal
     stdin_open: true
     tty: true
+
     # Network for ROS 2
     network_mode: host
+
     # Allow GUI applications
     environment:
       - DISPLAY=${DISPLAY}
+
+    # Bind mount the src directory to ros2_ws/src
+    volumes:
+      - ./src:/home/${USERNAME}/ros2_ws/src
