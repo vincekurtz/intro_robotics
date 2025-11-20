@@ -19,14 +19,14 @@ RUN groupadd -g ${GID} ${USERNAME} \
 WORKDIR /home/${USERNAME}
 USER ${USERNAME}
 
-# # Install Turtlebot3 packages
-# RUN mkdir -p ~/ros2_ws/src
-# WORKDIR /home/ubuntu/ros2_ws/src
-# RUN git clone -b jazzy https://github.com/ROBOTIS-GIT/DynamixelSDK.git
-# RUN git clone -b jazzy https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
-# RUN git clone -b jazzy https://github.com/ROBOTIS-GIT/turtlebot3.git 
-# WORKDIR /home/ubuntu/ros2_ws
-# RUN . /opt/ros/jazzy/setup.sh && colcon build --symlink-install
+# Install Turtlebot3 packages
+RUN mkdir -p ~/ros2_ws/src
+WORKDIR /home/${USERNAME}/ros2_ws/src
+RUN git clone -b jazzy https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+RUN git clone -b jazzy https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+RUN git clone -b jazzy https://github.com/ROBOTIS-GIT/turtlebot3.git 
+WORKDIR /home/${USERNAME}/ros2_ws
+RUN . /opt/ros/jazzy/setup.sh && colcon build --symlink-install
 
 # # Install SLAM and navigation packages
 # USER root
