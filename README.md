@@ -20,6 +20,12 @@ ros2 run demo_nodes_cpp talker
 ros2 run demo_nodes_cpp listener
 ```
 
+Scan local network for connected devices (to find the bot's IP):
+```
+nmap -sn 192.168.11.0/24
+```
+where `192.168.11` is replaced with the local subnet prefix.
+
 ## Docker basics:
 
 Start the container (`-d` runs in detached mode, `--build` builds the image
