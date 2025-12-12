@@ -29,14 +29,13 @@ WORKDIR /home/${USERNAME}/ros2_ws
 RUN . /opt/ros/jazzy/setup.sh && colcon build --symlink-install
 
 # Install SLAM and navigation packages
-# USER root
-# RUN apt-get update && apt-get install -y \
-#     ros-jazzy-cartographer \
-#     ros-jazzy-cartographer-ros \
-#     ros-jazzy-navigation2 \
-#     ros-jazzy-nav2-bringup
-# USER ubuntu
-
+USER root
+RUN apt-get update && apt-get install -y \
+    ros-jazzy-cartographer \
+    ros-jazzy-cartographer-ros \
+    ros-jazzy-navigation2 \
+    ros-jazzy-nav2-bringup
+USER ${USERNAME}
 
 # Configure the environment. Note that ROS_DOMAIN_ID must match the robot.
 WORKDIR /home/${USERNAME}

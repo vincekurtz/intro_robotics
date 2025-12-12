@@ -19,10 +19,17 @@ services:
     network_mode: host
 
     # Allow GUI applications
+    privileged: true
     environment:
       - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_DRIVER_CAPABILITIES=all
 
-    # Bind mount so that source code changes outside the container are reflected
-    # inside it, and vice versa.
     volumes:
+      # Allow graphical programs in the container.
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${XAUTHORITY:-$HOME/.Xauthority}:/root/.Xauthority
+
+      # Bind mount so that source code changes outside the container are
+      # reflected inside it, and vice versa.
       - ./src/course_pkg:/home/${USERNAME}/ros2_ws/src/course_pkg
