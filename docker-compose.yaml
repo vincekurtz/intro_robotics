@@ -1,5 +1,5 @@
 services:
-  intro_robotics:
+  robotics_env:
     build: 
       context: .
       dockerfile: Dockerfile
@@ -25,4 +25,4 @@ services:
     # Bind mount so that source code changes outside the container are reflected
     # inside it, and vice versa.
     volumes:
-      - ./src/intro_robotics:/home/${USERNAME}/ros2_ws/src/intro_robotics
+      - ./src/course_pkg:/home/${USERNAME}/ros2_ws/src/course_pkg

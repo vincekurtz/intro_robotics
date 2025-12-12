@@ -30,7 +30,7 @@ docker compose up --build -d
 
 Join the container, in a new terminal:
 ```
-docker compose exec intro_robotics bash
+docker compose exec robotics_env bash
 ```
 
 Stop the container
@@ -71,7 +71,7 @@ ros2 run turtlebot3_teleop teleop_keyboard
 
 Enter the (running) docker container:
 ```
-docker compose exec intro_robotics bash
+docker compose exec robotics_env bash
 ```
 
 Build the custom package (that has been bind mounted into `ros2_ws/src`):
@@ -83,7 +83,7 @@ source install/setup.bash
 
 Run the custom node:
 ```
-ros2 run intro_robotics my_first_node
+ros2 run course_pkg hello_world
 ```
 
 Edit the code from the host, and run the `ros2 run` command again. The changes

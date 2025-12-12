@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'intro_robotics'
+package_name = 'course_pkg'
 
 setup(
     name=package_name,
@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'my_first_node = intro_robotics.my_first_node:main'
+            'hello_world = course_pkg.hello_world:main'
         ],
     },
 )

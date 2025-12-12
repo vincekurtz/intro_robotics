@@ -1,6 +1,5 @@
 def main():
-    print('Hi from intro_robotics!')
-
+    print('Go Blue Demons! Go Robots! Hurray!')
 
 if __name__ == '__main__':
     main()
