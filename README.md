@@ -66,3 +66,26 @@ Remote control from the host machine (in the docker container):
 ```
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
+
+## Custom Scripts
+
+Enter the (running) docker container:
+```
+docker compose exec intro_robotics bash
+```
+
+Build the custom package (that has been bind mounted into `ros2_ws/src`):
+```
+cd ~/ros2_ws
+colcon build --symlink-install
+source install/setup.bash
+```
+
+Run the custom node:
+```
+ros2 run intro_robotics my_first_node
+```
+
+Edit the code from the host, and run the `ros2 run` command again. The changes
+should be reflected immediately, due to the bind mount and the
+`--symlink-install` option above.
