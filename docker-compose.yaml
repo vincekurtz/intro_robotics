@@ -32,4 +32,4 @@ services:
 
       # Bind mount so that source code changes outside the container are
       # reflected inside it, and vice versa.
-      - ./src/course_pkg:/home/${USERNAME}/ros2_ws/src/course_pkg
+      - ./course_pkg:/home/${USERNAME}/ros2_ws/src/course_pkg
