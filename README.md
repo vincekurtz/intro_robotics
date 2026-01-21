@@ -130,6 +130,10 @@ to the bind mount and the `--symlink-install` option above.
   effect. 
 - If the multicast test works and `ROS_DOMAIN_ID`s match, [check the firewall
   configuration](https://stackoverflow.com/questions/75006253/ros2-on-multiple-machines-ros2-multicast-working-talker-listener-not-working).
+- If the multicast test works and `ROS_DOMAIN_ID`s match, but there are still
+  issues seeing topics on both machines, try restarting the ros2 daemon on one
+  or both machines: `ros2 daemon stop`, then `ros2 daemon start`. That's
+  particularly helpful if the network configuration has changed.
 
 ## Helpful links
 
