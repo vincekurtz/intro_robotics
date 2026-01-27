@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'course_pkg'
+package_name = 'intro_robotics'
 
 setup(
     name=package_name,
