@@ -4,7 +4,8 @@ This repository contains source code for the DePaul University course taught in
 Winter 2026. 
 
 > [!NOTE]
-> For the previous (docker-based) version, see [this branch](TODO).
+> For the previous (docker-based) version, see [this
+> branch](https://github.com/vincekurtz/intro_robotics/tree/backup).
 
 ## Basics
 
