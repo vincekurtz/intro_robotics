@@ -104,8 +104,7 @@ The remote PC can't seem to communicate with the robot! What should I do?
   remote PC, and vice versa.
 - Check that `ROS_DOMAIN_ID` matches between the remote PC and the robot (`echo
   $ROS_DOMAIN_ID`). If not, edit the domain ID of the remote PC by editing
-  `Dockerfile`. You'll need to rebuild the container for the changes to take
-  effect. 
+  `~/.bashrc`. The change will take effect once you open a new terminal window.
 - If the multicast test works and `ROS_DOMAIN_ID`s match, [check the firewall
   configuration](https://stackoverflow.com/questions/75006253/ros2-on-multiple-machines-ros2-multicast-working-talker-listener-not-working).
 - If the multicast test works and `ROS_DOMAIN_ID`s match, but there are still
