@@ -1,0 +1,46 @@
+##
+#
+# A basic ROS2 docker compose configuration. For testing only. 
+#
+# Usage:
+#
+#   docker compose up --build -d
+#   docker compose exec robotics_env bash
+#
+##
+
+services:
+  robotics_env:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      # Use the same user and group IDs as the host user. This will ensure that
+      # permissions are consistent inside and outside the container.
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+        - USERNAME=${USERNAME:-user}
+    hostname: docker
+
+    # Interactive terminal
+    stdin_open: true
+    tty: true
+
+    # Network for ROS 2
+    network_mode: host
+
+    # Allow GUI applications
+    privileged: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_DRIVER_CAPABILITIES=all
+
+    volumes:
+      # Allow graphical programs in the container.
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${XAUTHORITY:-$HOME/.Xauthority}:/root/.Xauthority
+
+      # Bind mount so that source code changes outside the container are
+      # reflected inside it, and vice versa.
+      - .:/home/${USERNAME}/ros2_ws/src/intro_robotics

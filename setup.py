@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'hello_world = course_pkg.hello_world:main'
+            'hello_world = intro_robotics.hello_world:main'
         ],
     },
 )
