@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'hello_world = intro_robotics.hello_world:main'
+            'hello_world = intro_robotics.hello_world:main',
+            'feedback_control = intro_robotics.feedback_control:main'
         ],
     },
 )
