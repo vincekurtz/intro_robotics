@@ -15,7 +15,7 @@ robot_ip = "192.168.1.100"
 rtde_c = rtde_control.RTDEControlInterface(robot_ip)
 
 # Define a desired end-effector pose
-x = np.array([0.0, 0.0, 1.2, 0.0, 0.0, 0.0])
+x = np.array([-0.3, -0.2, 0.2, 0.0, np.pi, 0.0])
 
 # Solve IK for corresponding joint angles
 q = rtde_c.getInverseKinematics(x)

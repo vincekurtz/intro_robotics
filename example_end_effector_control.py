@@ -14,9 +14,15 @@ import rtde_control
 robot_ip = "192.168.1.100"
 rtde_c = rtde_control.RTDEControlInterface(robot_ip)
 
+# Go home
+q1 = np.array([0.0, -1.56, 0, -1.47, 0, 0])
+rtde_c.moveJ(q1)
+
 # Set some example end-effector poses.
-x1 = np.array([0.0, 0.0, 1.2, 0.0, 0.0, 0.0])
-x2 = np.array([0.0, 0.0, 1.0, 0.0, 0.0, 0.0])
+x1 = np.array([-0.0164, -0.3697, 0.61,
+               0.1268, 2.1744, -2.1586])
+x2 = np.array([-0.0164, -0.3697, 0.68,
+               0.1268, 2.1744, -2.1586])
 
 # Move to the given poses
 print("Moving to x1")

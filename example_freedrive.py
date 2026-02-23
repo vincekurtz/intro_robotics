@@ -15,6 +15,7 @@ rtde_c = rtde_control.RTDEControlInterface(robot_ip)
 
 try:
     # Enter free-drive mode for 5 seconds.
+    print("Running free-drive for 5 seconds...")
     start_time = time.time()
     rtde_c.freedriveMode()
     while time.time() - start_time < 5.0:

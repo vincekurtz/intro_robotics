@@ -16,7 +16,7 @@ rtde_c = rtde_control.RTDEControlInterface(robot_ip)
 
 # Set some example joint angles
 q1 = np.array([0.0, -1.56, 0, -1.47, 0, 0])
-q1 = np.array([0.2, -1.56, 0, -1.47, 0, 0])
+q2 = np.array([0.2, -1.56, 0, -1.47, 0, 0])
 
 # Move to the given joint configurations
 print("Moving to q1")

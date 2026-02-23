@@ -22,6 +22,3 @@ print("Current q:", q)
 x = rtde_r.getActualTCPPose()
 print("End-effector pose:", x)
 
-# Cleanup
-rtde_r.stopScript()
-
